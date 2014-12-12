@@ -1,0 +1,20 @@
+<h2>Update Comment</h2>
+
+<form action="/update_comment/<%= @comment.id %>" method="post">
+<table style="width:100%">
+	<tr>
+		<td><b>ID</b></td>
+		<td><b>BODY (OLD)</b></td>
+		<td><b>BODY (NEW)</b></td>
+		<td><b>ITEM_ID</b></td>
+	</tr>
+	<tr>
+		<td> <%= @comment.id %> </td>
+		<td> <%= @comment.body %> </td>
+		<td> <input type="text" name="body" /> </td>
+		<td> <%= @comment.item_id %> </td>
+	</tr>
+</table>
+<input type="hidden" name="item_id" value="<%= @comment.item_id %>" />
+<input type="submit" />
+</form>

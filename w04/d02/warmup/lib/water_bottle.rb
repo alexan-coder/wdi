@@ -1,0 +1,3 @@
+class WaterBottle
+
+end

@@ -1,0 +1,26 @@
+<h2>Individual Item</h2>
+
+<table style="width:100%">
+	<tr>
+		<td><b>ID</b></td>
+		<td><b>TITLE</b></td>
+		<td><b>DESCRIPTION</b></td>
+		<td><b>UPDATE</b></td>
+		<td><b>DELETE</b></td>
+	</tr>
+	<tr>
+		<td> <%= @item.id %> </td>
+		<td> <%= @item.title %> </td>
+		<td> <%= @item.description %> </td>
+		<td> <a href="/update/<%= @item.id %>">Click</a> </td>
+	  <td> <a href="/delete/<%= @item.id %>">Click</a> </td>
+	</tr>
+</table>
+
+<form action="/comment/<%= @item.id %>" method="post">
+	<legend>Add a Comment:</legend>
+	<label>Body: <input type="text" name="body" /></label>
+	<input type="submit" />
+</form>
+
+<a href="/">Go back home</a>

@@ -1,0 +1,10 @@
+<p>Here is your shopping cart so far:</p>
+
+<!-- Show what's in the user's cart -->
+<ul>
+<% @cart_products.each do |product| %>
+	<li>
+		<h3><%=product.product_name%></h3>
+	</li>
+<% end %>
+</ul>

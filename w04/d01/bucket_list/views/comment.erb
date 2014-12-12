@@ -1,0 +1,20 @@
+<h2>Comment</h2>
+
+<table style="width:100%">
+	<tr>
+		<td><b>ID</b></td>
+		<td><b>BODY</b></td>
+		<td><b>ITEM_ID</b></td>
+		<td><b>UPDATE</b></td>
+		<td><b>DELETE</b></td>
+	</tr>
+	<tr>
+		<td> <%= @comment.id %> </td>
+		<td> <%= @comment.body %> </td>
+		<td> <%= @comment.item_id %> </td>
+		<td> <a href="/update_comment/<%= @comment.id %>">Click</a> </td>
+	  <td> <a href="/delete_comment/<%= @comment.id %>">Click</a> </td>
+	</tr>
+</table>
+
+<a href="/">Go back home</a>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1> <%= @username + "\'s Growls" %></h1>
+
+<ul> <% @username.growls.each do |post| %>
+<li> <%= growl.body %> </li>
+</ul>
+
+
+
+</body>
+</html>

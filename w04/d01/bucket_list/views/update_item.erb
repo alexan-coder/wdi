@@ -1,0 +1,21 @@
+<h2>Update Item</h2>
+
+<form action="/update/<%= @item.id %>" method="post">
+<table style="width:100%">
+	<tr>
+		<td><b>ID</b></td>
+		<td><b>TITLE (OLD)</b></td>
+		<td><b>TITLE (NEW)</b></td>
+		<td><b>DESCRIPTION (OLD)</b></td>
+		<td><b>DESCRIPTION (NEW)</b></td>
+	</tr>
+	<tr>
+		<td> <%= @item.id %> </td>
+		<td> <%= @item.title %> </td>
+		<td> <input type="text" name="title" /> </td>
+		<td> <%= @item.description %> </td>
+	  <td> <input type="text" name="description" /> </td>
+	</tr>
+</table>
+<input type="submit" />
+</form>

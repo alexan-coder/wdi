@@ -1,0 +1,38 @@
+.logo_flag {
+	background: red;
+	display: inline-block;
+}
+
+header span {
+	display: inline-block;
+	width: 35px;
+}
+
+.hero {
+	background: red;
+	height: 250px;
+	background-image:url(me.jpg);
+	background-size:100%;
+	background-position:50% -100px;
+}
+
+section {
+	width: 400px;
+	margin: auto; /*  margin: auto only works for block elements */
+}
+
+.contact a {
+	display: inline-block;
+	box-sizing:border-box;
+	background: #444;
+	color: #fff;
+	text-decoration: none;
+	padding: 1em;
+	margin-bottom: 1em;
+	text-align: center;
+	width:49.4%;
+}
+
+.contact a:first-child {
+	width:100%;
+}

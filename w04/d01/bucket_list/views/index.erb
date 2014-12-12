@@ -1,0 +1,23 @@
+<h2>All the items</h2>
+
+<table style="width:100%">
+	<tr>
+		<td><b>ID</b></td>
+		<td><b>TITLE</b></td>
+		<td><b>DESCRIPTION</b></td>
+	</tr>
+	<% @items.each do |item| %>
+	<tr>
+		<td> <a href="/<%= item.id %>"><%= item.id %></a> </td>
+		<td> <%= item.title %> </td>
+		<td> <%= item.description %> </td>
+	</tr>
+	<% end %>
+</table>
+<br>
+<form action="/item" method="post">
+	<legend>Add an Item:</legend>
+	<label>Title: <input type="text" name="title" /></label>
+	<label>Description: <input type="text" name="description" /></label>
+	<input type="submit" />
+</form>
