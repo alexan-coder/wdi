@@ -3,16 +3,8 @@ class TasksController < ApplicationController
 		@tasks = Task.all
 	end
 
-	def show
-		@task = Task.find(params[:id])
-	end
-
 	def new
 		@task = Task.new #placeholder for a form as in <%= form_for @task do |f| %>
-	end
-
-	def edit
-		@task = Task.find(params[:id])
 	end
 
 	def create
@@ -22,6 +14,14 @@ class TasksController < ApplicationController
 		else
 			render :new
 		end
+	end
+
+	def edit
+		@task = Task.find(params[:id])
+	end
+
+	def show
+		@task = Task.find(params[:id])
 	end
 
 	def update
