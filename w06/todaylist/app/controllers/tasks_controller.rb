@@ -4,6 +4,7 @@ class TasksController < ApplicationController
 	end
 
 	def show
+		@task = Task.find(params[:id])
 	end
 
 	def new
@@ -11,6 +12,7 @@ class TasksController < ApplicationController
 	end
 
 	def edit
+		@task = Task.find(params[:id])
 	end
 
 	def create
@@ -23,9 +25,27 @@ class TasksController < ApplicationController
 	end
 
 	def update
+		@task = Task.find(params[:id])
+		if @task.update(task_params)
+			redirect_to '/'
+		else
+			redirect_to edit_task_path(@task)
+		end
+		# @task = Task.update(params[:id], task_params)
+		# if @task
+		# 	redirect_to '/'
+		# else
+		# 	render :edit #render goes only to action, not path.
+		# end
 	end
 
 	def destroy
+		@task = Task.find(params[:id])
+		if @task.destroy
+			redirect_to '/'
+		else
+			redirect_to task_path(@task)
+		end
 	end
 
 	private
