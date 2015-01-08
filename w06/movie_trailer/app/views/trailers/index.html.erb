@@ -15,7 +15,7 @@
       <tr>
         <td><%= trailer.title %></td>
         <td><%= trailer.embed_code %></td>
-        <td><%= link_to @trailer.movie.title, @trailer.movie %></td>
+        <td><%= link_to trailer.movie.title, trailer.movie %></td>
         <td><%= link_to 'Show', trailer %></td>
         <td><%= link_to 'Edit', edit_trailer_path(trailer) %></td>
         <td><%= link_to 'Destroy', trailer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
