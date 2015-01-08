@@ -1,0 +1,29 @@
+<h1>Listing trailers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Embed code</th>
+      <th>Movie</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trailers.each do |trailer| %>
+      <tr>
+        <td><%= trailer.title %></td>
+        <td><%= trailer.embed_code %></td>
+        <td><%= link_to @trailer.movie.title, @trailer.movie %></td>
+        <td><%= link_to 'Show', trailer %></td>
+        <td><%= link_to 'Edit', edit_trailer_path(trailer) %></td>
+        <td><%= link_to 'Destroy', trailer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Trailer', new_trailer_path %>

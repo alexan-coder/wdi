@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MovieTrailer</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<nav>
+  <%= link_to "Movies", movies_path %>
+  <%= link_to "Characters", characters_path %>
+  <%= link_to "Trailers", trailers_path %>
+</nav>
+<%= yield %>
+
+</body>
+</html>
