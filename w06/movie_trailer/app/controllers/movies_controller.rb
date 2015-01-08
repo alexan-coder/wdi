@@ -4,7 +4,18 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.json
   def index
-    @movies = Movie.all
+    # @movies = Movie.order(:year => :desc)
+    # @movies = Movie.order(year: :desc)
+    # @movies = Movie.order("year desc")
+    # @movies = Movie.where(:year => (30.years.ago.year..Time.now.year))
+    # params[:order] = :year
+    # params[:limit] = 2
+    # params[:page_num] = 2
+    # http://localhost:3000/movies?order=year&limit=2&page_num=2
+    
+    @movies = Movie.order(params[:order] => :desc).limit(params[:limit])
+    @movies = @movies.offset( (params[:page_num].to_i-1) * params[:limit].to_i )
+
   end
 
   # GET /movies/1
