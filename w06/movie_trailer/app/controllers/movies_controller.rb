@@ -16,6 +16,13 @@ class MoviesController < ApplicationController
     @movies = Movie.order(params[:order] => :desc).limit(params[:limit])
     @movies = @movies.offset( (params[:page_num].to_i-1) * params[:limit].to_i )
 
+    # Movie.count is different from Array.count as the record of ActiveRecord is different from the element of Array.
+    # num_pages = Movie.count/params[:limit]
+    # if Movie.count % params[:limit] != 0
+    #   num_page += 1
+    # end
+
+    num_pages = (Movie.count.to_f/params[:limit]).ceil
   end
 
   # GET /movies/1
